@@ -8,7 +8,8 @@ steps:
     arguments: '-SourcePath $(System.DefaultWorkingDirectory)\src\ -Publish -ResultsPath $(System.DefaultWorkingDirectory)\publish'
 
 - task: reportgenerator@5
+  displayName: 'Publish code covergae results'
   inputs:
     reports: '*Pester.xml'
     targetdir: '$(System.DefaultWorkingDirectory)\publish'
-    sourcedirs: '$(System.DefaultWorkingDirectory\src\powershell'
+    sourcedirs: '$(System.DefaultWorkingDirectory)\src\powershell'
