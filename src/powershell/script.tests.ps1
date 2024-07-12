@@ -1,5 +1,5 @@
 
-Describe "Script test" {
+Describe "script.ps1" {
     It "Should return 3 apps count" {
         $appsMock = @()
         $appsMock += [PSCustomObject]@{
