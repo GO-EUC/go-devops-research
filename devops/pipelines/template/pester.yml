@@ -7,15 +7,8 @@ steps:
     filePath: '$(System.DefaultWorkingDirectory)\devops\pipelines\scripts\pester.ps1'
     arguments: '-SourcePath $(System.DefaultWorkingDirectory)\src\ -Publish -ResultsPath $(System.DefaultWorkingDirectory)\publish'
 
-- task: PublishTestResults@2
-  inputs:
-    testResultsFormat: 'NUnit'
-    testResultsFiles: '**/*.xml'
-    mergeTestResults: true
-    failTaskOnFailedTests: true
-
 - task: PublishCodeCoverageResults@2
   displayName: 'Publish results'
   inputs:
     summaryFileLocation: '$(System.DefaultWorkingDirectory)\publish\codecoverage.xml'
-    pathToSources: '$(System.DefaultWorkingDirectory)\src'
+    pathToSources: '$(System.DefaultWorkingDirectory)\src\powershell\'
