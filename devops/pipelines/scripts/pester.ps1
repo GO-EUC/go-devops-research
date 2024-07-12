@@ -29,9 +29,11 @@ $config = New-PesterConfiguration
 $config.Run.Path = $SourcePath
 if ($Publish) {
     $config.CodeCoverage.Enabled = $true
-    $config.CodeCoverage.OutputFormat = 'CoverageGutters'
+    $config.CodeCoverage.OutputFormat = 'JaCoCo'
     $config.CodeCoverage.OutputPath = "$ResultsPath\codecoverage.xml"
     $config.CodeCoverage.OutputEncoding = 'UTF8'
 }
 
 Invoke-Pester -Configuration $config
+
+Write-Output "Results are published: $($ResultsPath)\codecoverage.xml"
