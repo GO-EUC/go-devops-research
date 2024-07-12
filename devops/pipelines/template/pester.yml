@@ -10,5 +10,5 @@ steps:
 - task: PublishCodeCoverageResults@2
   displayName: 'Publish results'
   inputs:
-    summaryFileLocation: '$(System.DefaultWorkingDirectory)\publish'
+    summaryFileLocation: '$(System.DefaultWorkingDirectory)\publish\codecoverage.xml'
     pathToSources: '$(System.DefaultWorkingDirectory)\src'
