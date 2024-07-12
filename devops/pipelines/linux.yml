@@ -1,0 +1,10 @@
+name: 'Linux Pester Pipeline'
+
+trigger:
+- none
+
+pool:
+  vmImage: 'linux-latest'
+
+steps:
+- template: templates/pester.yml

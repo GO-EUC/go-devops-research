@@ -1,0 +1,14 @@
+
+steps:
+- task: PowerShell@2
+  displayName: 'Executing Pester Tests'
+  inputs:
+    pwsh: true
+    filePath: '$(System.DefaultWorkingDirectory)\devops\pipelines\scripts\pester.ps1'
+    arguments: '-SourcePath $(System.DefaultWorkingDirectory)\src\ -Publish -ResultsPath $(System.DefaultWorkingDirectory)\publish'
+
+- task: reportgenerator@5
+  inputs:
+    reports: '*Pester.xml'
+    targetdir: '$(System.DefaultWorkingDirectory)\publish'
+    sourcedirs: '$(System.DefaultWorkingDirectory\src\powershell'

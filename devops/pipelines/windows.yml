@@ -1,0 +1,10 @@
+name: 'Windows Pester Pipeline'
+
+trigger:
+- none
+
+pool:
+  vmImage: 'windows-latest'
+
+steps:
+- template: templates/pester.yml

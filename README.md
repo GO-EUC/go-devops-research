@@ -1,1 +1,1 @@
-# go-devops-research
+This project is used for a GO-EUC research
