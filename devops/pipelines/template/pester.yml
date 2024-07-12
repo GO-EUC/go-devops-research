@@ -8,6 +8,7 @@ steps:
     arguments: '-SourcePath $(System.DefaultWorkingDirectory)\src\powershell -Publish -ResultsPath $(System.DefaultWorkingDirectory)\publish'
 
 - task: PublishTestResults@2
+  displayName: 'Publish test results'
   inputs:
     testResultsFormat: 'NUnit'
     testResultsFiles: '$(System.DefaultWorkingDirectory)\publish\pester.xml'
@@ -15,7 +16,7 @@ steps:
     failTaskOnFailedTests: true
 
 - task: PublishCodeCoverageResults@2
-  displayName: 'Publish results'
+  displayName: 'Publish code coverage'
   inputs:
     summaryFileLocation: '$(System.DefaultWorkingDirectory)\publish\codecoverage.xml'
     pathToSources: '$(System.DefaultWorkingDirectory)\src\powershell'
