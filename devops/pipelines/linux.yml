@@ -4,7 +4,7 @@ trigger:
 - none
 
 pool:
-  vmImage: 'linux-latest'
+  vmImage: 'ubuntu-latest'
 
 steps:
 - template: template/pester.yml
