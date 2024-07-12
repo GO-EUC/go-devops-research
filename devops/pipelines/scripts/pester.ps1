@@ -27,6 +27,10 @@ $pesterModule | Import-Module
 
 $config = New-PesterConfiguration
 $config.Run.Path = $SourcePath
+
+$config.TestResult.Enabled = $true
+$config.TestResult.OutputPath = "$($ResultsPath)\pester.xml"
+
 if ($Publish) {
     $config.CodeCoverage.Enabled = $true
     $config.CodeCoverage.OutputFormat = 'JaCoCo'
