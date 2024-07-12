@@ -7,4 +7,4 @@ pool:
   vmImage: 'linux-latest'
 
 steps:
-- template: templates/pester.yml
+- template: template/pester.yml
