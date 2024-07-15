@@ -28,7 +28,7 @@ Describe "mesure.ps1" {
             Project = "dummy"
             PipelineId = "1337"
         }
-        { & "$PSScriptRoot/mesure.ps1" @splat } | Should -Not -Throw
+        { & "$PSScriptRoot/measure.ps1" @splat } | Should -Not -Throw
 
     }
 }
