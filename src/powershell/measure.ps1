@@ -30,7 +30,7 @@ $body = [PSCustomObject]@{
 }
 
 $startSplat = @{
-    Uri = "https://dev.azure.com/${Organization}/${Project}/_apis/pipelines/${PipelineId}/runs?api-version=7.1-preview.1"
+    Uri = "https://dev.azure.com/$($Organization)/$($Project)/_apis/pipelines/$($PipelineId)/runs?api-version=7.1-preview.1"
     Method = "POST"
     ContentType = "application/json"
     Headers = $header
@@ -41,7 +41,6 @@ $run = Invoke-RestMethod @startSplat
 
 while ($run.state -ne 'completed') {
 
-    Write-Output "Current state: $($run.State)"
     $runSplat = @{
         Uri = $run.url
         Method = "GET"
@@ -56,4 +55,4 @@ while ($run.state -ne 'completed') {
 
 $timeSpan = $run.finishedDate - $run.createdDate
 
-Write-Output "Total time: $($timeSpan.TotalSeconds)"
+return $($timeSpan.TotalSeconds)

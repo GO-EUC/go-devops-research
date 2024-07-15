@@ -33,7 +33,7 @@ $config.TestResult.OutputPath = "$($ResultsPath)\pester.xml"
 
 if ($Publish) {
     $config.CodeCoverage.Enabled = $true
-    $config.CodeCoverage.OutputFormat = 'JaCoCo'
+    $config.CodeCoverage.OutputFormat = 'CoverageGutters'
     $config.CodeCoverage.OutputPath = "$ResultsPath\codecoverage.xml"
     $config.CodeCoverage.OutputEncoding = 'UTF8'
 }
