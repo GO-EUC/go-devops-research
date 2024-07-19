@@ -1,0 +1,9 @@
+name: 'Private Pester Pipeline'
+
+trigger:
+- none
+
+pool: 'default'
+
+steps:
+- template: template/pester.yml

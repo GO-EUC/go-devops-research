@@ -1,0 +1,10 @@
+name: 'MacOS Pester Pipeline'
+
+trigger:
+- none
+
+pool:
+  vmImage: 'macOS-latest'
+
+steps:
+- template: template/pester.yml
